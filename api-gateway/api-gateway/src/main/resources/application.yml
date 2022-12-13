@@ -1,0 +1,46 @@
+#Set port for service
+server:
+  port: 9191
+#Config for API Gateway properties
+spring:
+  application:
+    name: api-gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      #Routing to service
+      routes:
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/customer/**
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/product/**
+        - id: discovery-service-server
+          uri: lb://localhost:8761
+          predicates:
+            - Path=/eureka/web
+#Config for API Gateway Client properties
+eureka:
+  client:
+    register-with-eureka:
+      value: false
+    fetch-registry:
+      value: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF

@@ -1,0 +1,8 @@
+#Set port for service
+server:
+  port: 8761
+#Config API Gateway Server properties
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false

@@ -1,0 +1,32 @@
+#Config Database properties
+spring:
+  application:
+    name: order-service
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/orderDB
+    username: root
+    password: 123456789
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+#Set port for service
+server:
+  port: 8083
+#  error:
+#    include-stacktrace: "never"
+#Config API Gateway Client properties
+eureka:
+  client:
+    register-with-eureka:
+      value: true
+    fetch-registry:
+      value: true;
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost

@@ -1,0 +1,5 @@
+Chạy file service-discovery -> api-gateway -> chạy các service khác
+Import file postman để test: Sau khi Postman khởi động xong -> Nhấn vào dấu ba gạch ở góc trái trên cùng -> File -> Import... 
+			     hoặc Mở Postman và nhấn Ctrl + O
+		
+

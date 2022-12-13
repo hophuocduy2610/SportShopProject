@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "8f38a9d8-a943-48f5-bd50-dc7f1347942a",
+		"name": "BTLKienTrucThietKePhamMem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check API Product",
+			"item": [
+				{
+					"name": "NOT API GATEWAY: GET PRODUCT WITH QUANTITY > 0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/product/getproductsbyquantity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"getproductsbyquantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API GATEWAY: GET PRODUCT WITH QUANTITY > 0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/product/getproductsbyquantity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"product",
+								"getproductsbyquantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NOT API GATEWAY: GET PRODUCT BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/product/getproductbyid/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"getproductbyid",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API GATEWAY: GET PRODUCT BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/product/getproductbyid/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"product",
+								"getproductbyid",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check API Customer",
+			"item": [
+				{
+					"name": "NOT API GATEWAY: GET CUSTOMER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/customer/getcustomerbyid/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								"getcustomerbyid",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API GATEWAY: GET CUSTOMER BY ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"accept-encoding": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/customer/getcustomerbyid/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"customer",
+								"getcustomerbyid",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check API Order",
+			"item": [
+				{
+					"name": "NOT API GATEWAY: PAYMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"customerID\": 5,\r\n    \"orderDate\": \"24/12/2022\",\r\n    \"totalPrice\": 25000.0,\r\n    \"orderDetailList\": [\r\n        {\r\n            \"id\": 1,\r\n            \"skuCode\": \"SP001\",\r\n            \"productName\": \"Áo thể thao\",\r\n            \"price\": 25000.0,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"skuCode\": \"SP002\",\r\n            \"productName\": \"Quần thể thao\",\r\n            \"price\": 20000.0,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/order/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"order",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API GATEWAY: PAYMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 9,\r\n    \"customerID\": 4,\r\n    \"orderDate\": \"24/12/2022\",\r\n    \"totalPrice\": 45000.0,\r\n    \"orderDetailList\": [\r\n        {\r\n            \"id\": 1,\r\n            \"skuCode\": \"SP001\",\r\n            \"productName\": \"Áo thể thao\",\r\n            \"price\": 25000.0,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"skuCode\": \"SP002\",\r\n            \"productName\": \"Quần thể thao\",\r\n            \"price\": 20000.0,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9191/order/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"order",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NOT API GATEWAY: GET ORDER BY CUSTOMER ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/order/getorderbyid/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"order",
+								"getorderbyid",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API GATEWAY: GET ORDER BY CUSTOMER ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/order/getorderbyid/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"order",
+								"getorderbyid",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NOT API GATEWAY: GET ORDER DETAIL BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/order/getorderdetailbyid/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"order",
+								"getorderdetailbyid",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API GATEWAY: GET ORDER DETAIL BY ID Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/order/getorderdetailbyid/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"order",
+								"getorderdetailbyid",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check API Inventory",
+			"item": [
+				{
+					"name": "http://localhost:8084/inventory/updateproductquantity/{skucode}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/inventory/updateproductquantity/SP001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"inventory",
+								"updateproductquantity",
+								"SP001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
